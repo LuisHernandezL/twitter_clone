@@ -24,7 +24,10 @@ final goRouterProvider = Provider(
           path: AppRoutes.home,
           builder: (context, state) => const HomeScreen(),
         ),
-        // GoRoute(path: AppRoutes.register),
+        GoRoute(
+          path: AppRoutes.register,
+          builder: (context, state) => const RegisterScreen(),
+        ),
       ],
     );
   },

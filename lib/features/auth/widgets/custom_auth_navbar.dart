@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class CustomAuthNavBar extends StatelessWidget {
   final String buttonText;
   final VoidCallback onPressed;
+  final bool showForgotPassword;
 
   const CustomAuthNavBar({
     super.key,
     required this.buttonText,
     required this.onPressed,
+    this.showForgotPassword = true,
   });
 
   @override
@@ -26,15 +28,19 @@ class CustomAuthNavBar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Row(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: showForgotPassword
+              ? MainAxisAlignment.spaceBetween
+              : MainAxisAlignment.end,
           children: [
-            const Text(
-              'Forgot password?',
-              style: TextStyle(
-                color: ColorsConfig.twitterLightGrey,
-                fontSize: 14,
-              ),
-            ),
+            showForgotPassword
+                ? const Text(
+                    'Forgot password?',
+                    style: TextStyle(
+                      color: ColorsConfig.twitterLightGrey,
+                      fontSize: 14,
+                    ),
+                  )
+                : const SizedBox.shrink(),
             OutlinedButton(
               style: OutlinedButton.styleFrom(
                 backgroundColor: ColorsConfig.twitterBlue,

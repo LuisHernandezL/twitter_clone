@@ -1,5 +1,7 @@
+import 'package:clone_twitter/config/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:clone_twitter/config/config.dart';
+import 'package:go_router/go_router.dart';
 
 class RegisterTypeWidget extends StatelessWidget {
   const RegisterTypeWidget({
@@ -62,7 +64,9 @@ class RegisterTypeWidget extends StatelessWidget {
         ]),
         const SizedBox(height: 5),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            context.push(AppRoutes.register);
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: ColorsConfig.twitterBlue,
             shape: RoundedRectangleBorder(
