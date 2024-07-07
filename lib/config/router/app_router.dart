@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:clone_twitter/config/router/app_routes.dart';
 
 import 'package:clone_twitter/features/home/screens/screens.dart';
-import 'package:clone_twitter/features/login/screens/screens.dart';
+import 'package:clone_twitter/features/auth/screens/screens.dart';
 
 final goRouterProvider = Provider(
   (ref) {
