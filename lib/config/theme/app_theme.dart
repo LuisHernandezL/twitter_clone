@@ -7,5 +7,6 @@ class AppTheme {
         colorScheme: const ColorScheme.dark(
           primary: ColorsConfig.twitterBlack,
         ),
+        scaffoldBackgroundColor: ColorsConfig.twitterBlack,
       );
 }

@@ -1,5 +1,7 @@
+import 'package:clone_twitter/config/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:clone_twitter/config/config.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool showBackButton;
@@ -18,7 +20,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ? IconButton(
               icon:
                   const Icon(Icons.arrow_back, color: ColorsConfig.twitterBlue),
-              onPressed: () {},
+              onPressed: () {
+                context.canPop()
+                    ? context.pop()
+                    : context.pushReplacement(AppRoutes.home);
+              },
             )
           : null,
       title: Image.asset(
