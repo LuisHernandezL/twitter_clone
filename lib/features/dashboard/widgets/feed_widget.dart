@@ -7,37 +7,57 @@ class FeedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
+      separatorBuilder: (context, index) => const Divider(),
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: 10,
+      itemCount: 30,
       itemBuilder: (context, index) {
         return Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: const Column(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 children: [
-                  CircleAvatar(
-                    radius: 30,
+                  const CircleAvatar(
+                    radius: 28,
                     backgroundImage:
                         AssetImage('assets/images/twitter_logo.png'),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('User Name'),
-                      Text('User Handle'),
+                      const Row(
+                        children: [
+                          Text(
+                            'Name',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(width: 5),
+                          Text('@handle'),
+                          SizedBox(width: 5),
+                          Text('•'),
+                          SizedBox(width: 5),
+                          Text('2h'),
+                        ],
+                      ),
+                      const SizedBox(height: 5),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.79,
+                        child: const Text(
+                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                          maxLines: 4,
+                          style: TextStyle(overflow: TextOverflow.ellipsis),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
-              SizedBox(height: 10),
-              Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-              ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
             ],
           ),
         );
