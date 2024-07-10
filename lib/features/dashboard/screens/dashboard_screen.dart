@@ -10,6 +10,7 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const SideDrawerWidget(),
       appBar: const CustomAppBar(
         isDashboard: true,
       ),

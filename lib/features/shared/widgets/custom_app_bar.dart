@@ -39,13 +39,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       backgroundColor: ColorsConfig.twitterBlack,
       toolbarHeight: height * 0.1,
-      leading: getIconButton(() {
-        showBackButton
-            ? context.canPop()
-                ? context.pop()
-                : context.pushReplacement(AppRoutes.home)
-            : null;
-      }),
+      leading: getIconButton(
+        () {
+          showBackButton
+              ? context.canPop()
+                  ? context.pop()
+                  : context.pushReplacement(AppRoutes.home)
+              : Scaffold.of(context).openDrawer();
+        },
+      ),
       title: Image.asset(
         'assets/images/twitter_logo.png',
         height: 30,
