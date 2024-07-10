@@ -1,3 +1,4 @@
+import 'package:clone_twitter/features/dashboard/screens/screens.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,7 +12,10 @@ final goRouterProvider = Provider(
     return GoRouter(
       initialLocation: AppRoutes.home,
       routes: [
-        // GoRoute(path: AppRoutes.feed),
+        GoRoute(
+          path: AppRoutes.feed,
+          builder: (context, state) => const DashboardScreen(),
+        ),
         GoRoute(
           path: AppRoutes.login,
           builder: (context, state) => const LoginScreen(),
