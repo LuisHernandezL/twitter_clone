@@ -1,8 +1,8 @@
-import 'package:clone_twitter/config/router/app_routes.dart';
-import 'package:clone_twitter/features/auth/widgets/widgets.dart';
+import 'package:clone_twitter/config/config.dart';
+
+import 'package:clone_twitter/features/dashboard/widgets/widgets.dart';
 import 'package:clone_twitter/features/shared/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -10,17 +10,23 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
-      bottomNavigationBar: CustomAuthNavBar(
-        buttonText: 'Next',
-        onPressed: () {
-          context.push(AppRoutes.password);
-        },
+      appBar: const CustomAppBar(
+        isDashboard: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25),
-        child: Container(
-          child: Text('DashBoard'),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: ColorsConfig.twitterBlue,
+        onPressed: () {
+          // context.push(AppRoutes.tweet);
+        },
+        child: const Icon(Icons.add),
+      ),
+      body: const SingleChildScrollView(
+        child: Column(
+          children: [
+            SpacesWidget(),
+            Divider(),
+            FeedWidget(),
+          ],
         ),
       ),
     );

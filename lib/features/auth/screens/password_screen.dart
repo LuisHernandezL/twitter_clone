@@ -17,7 +17,7 @@ class PasswordScreen extends StatelessWidget {
       bottomNavigationBar: CustomAuthNavBar(
         buttonText: 'Log in',
         onPressed: () {
-          context.push(AppRoutes.feed);
+          context.go(AppRoutes.feed);
         },
       ),
       body: const Padding(
