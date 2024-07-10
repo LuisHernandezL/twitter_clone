@@ -38,11 +38,18 @@ class RegisterScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  CustomTextFormField(),
+                  CustomTextFormField(
+                    hintText: 'Name',
+                    maxLength: 50,
+                  ),
                   SizedBox(height: 20),
-                  CustomTextFormField(),
+                  CustomTextFormField(
+                    hintText: 'Phone, email, or username',
+                  ),
                   SizedBox(height: 20),
-                  CustomTextFormField(),
+                  CustomTextFormField(
+                    hintText: 'Date of birth',
+                  ),
                 ],
               ),
             ),
