@@ -16,10 +16,11 @@ class DashboardScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: ColorsConfig.twitterBlue,
+        foregroundColor: Colors.white,
         onPressed: () {
           // context.push(AppRoutes.tweet);
         },
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.create),
       ),
       body: const SingleChildScrollView(
         child: Column(

@@ -1,3 +1,5 @@
+import 'package:clone_twitter/features/dashboard/widgets/widgets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FeedWidget extends StatelessWidget {
@@ -53,6 +55,32 @@ class FeedWidget extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
+                      const SizedBox(height: 10),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.6,
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            ActionButtonWidget(
+                              icon: CupertinoIcons.chat_bubble,
+                              text: '1',
+                            ),
+                            ActionButtonWidget(
+                              icon: CupertinoIcons.repeat,
+                              text: '2',
+                            ),
+                            ActionButtonWidget(
+                              icon: CupertinoIcons.heart,
+                              text: '3',
+                            ),
+                            ActionButtonWidget(
+                              icon: Icons.ios_share_rounded,
+                              text: '',
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ],

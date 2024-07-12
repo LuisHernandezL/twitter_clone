@@ -29,7 +29,7 @@ class SpacesWidget extends StatelessWidget {
                 child: Column(
                   children: [
                     const CircleAvatar(
-                      radius: 30,
+                      radius: 24,
                       backgroundImage:
                           AssetImage('assets/images/twitter_logo.png'),
                     ),
